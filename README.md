@@ -92,55 +92,55 @@ Dataset yang diambil berasal dari sumber open source yaitu Kaggle yang menyimpan
 Berikut adalah penjelasan masing-masing fitur dalam masing-masing dataset:
 1. Dataset Buku (books.csv)
 
-  *   ISBN : Kode unik identifikasi untuk setiap buku (International Standard Book Number). Digunakan untuk menghubungkan data buku dengan data rating.
-  *   Book-TItle : Judul lengkap dari buku. Berguna untuk menampilkan informasi buku pada antarmuka pengguna
-  *   Book-Author : Nama penulis buku
-  *   Year-Of-Publication : Tahun terbit buku.
-  *   Publisher : Nama penerbit buku.
-  *   Image-URL-S : URL gambar sampul buku dalam ukuran kecil (S)
-  *   Image-URL-M : URL gambar sampul buku dalam ukuran sedang (M)
-  *   Image-URL-L : URL gambar sampul buku dalam ukuran besar (L)
+    *   ISBN : Kode unik identifikasi untuk setiap buku (International Standard Book Number). Digunakan untuk menghubungkan data buku dengan data rating.
+    *   Book-TItle : Judul lengkap dari buku. Berguna untuk menampilkan informasi buku pada antarmuka pengguna
+    *   Book-Author : Nama penulis buku
+    *   Year-Of-Publication : Tahun terbit buku.
+    *   Publisher : Nama penerbit buku.
+    *   Image-URL-S : URL gambar sampul buku dalam ukuran kecil (S)
+    *   Image-URL-M : URL gambar sampul buku dalam ukuran sedang (M)
+    *   Image-URL-L : URL gambar sampul buku dalam ukuran besar (L)
 
 2. Dataset Pengguna (users.csv)
-  *   User-ID : ID unik untuk masing-masing pengguna. Digunakan untuk menghubungkan data pengguna dengan data rating.
-  *   Location : Lokasi pengguna
-  *   Age : Usia pengguna
+    *   User-ID : ID unik untuk masing-masing pengguna. Digunakan untuk menghubungkan data pengguna dengan data rating.
+    *   Location : Lokasi pengguna
+    *   Age : Usia pengguna
 
 3. Dataset Rating (ratings.csv)
-  *   User-ID : ID unik untuk masing-masing pengguna. Digunakan untuk menghubungkan data pengguna dengan data pengguna.
-  *   ISBN : Kode unik identifikasi untuk setiap buku (International Standard Book Number). Digunakan untuk menghubungkan data buku dengan data rating.
-  *   Book-Rating : Nilai rating yang diberikan pengguna terhadap buku yang pernah dibaca, dinilai dalam skala 0–10.
+    *   User-ID : ID unik untuk masing-masing pengguna. Digunakan untuk menghubungkan data pengguna dengan data pengguna.
+    *   ISBN : Kode unik identifikasi untuk setiap buku (International Standard Book Number). Digunakan untuk menghubungkan data buku dengan data rating.
+    *   Book-Rating : Nilai rating yang diberikan pengguna terhadap buku yang pernah dibaca, dinilai dalam skala 0–10.
 
 ## Proses Persiapan Data
 Dikarenakan model yang dikembangkan menggunakan pendekatan Content-Based Filtering, model akan dipakai untuk memberikan rekomendasi buku berdasarkan buku yang telah dibaca oleh pengguna berdasarkan penulis yang sama. Oleh karena itu, dilakukan proses persiapan data hanya pada dataset 'books.csv' karena menyimpan data buku dan penulis. Tahapan yang dilakukan dalam persiapan data diantaranya:
 
 1. Load Dataset
 
-  Dataset diupload dari google drive yang dimana sudah didownload dari sumber (Kaggle) agar dapat digunakan untuk perkembangan sistem rekomendasi.
+   Dataset diupload dari google drive yang dimana sudah didownload dari sumber (Kaggle) agar dapat digunakan untuk perkembangan sistem rekomendasi.
 
 2. Perubahan Nama Kolom
 
-  Kolom-kolom pada masing-masing dataset akan dibuah menjadi bentuk yang dapat dibaca oleh sistem dan mudah untuk ditulis oleh pengembang.
+   Kolom-kolom pada masing-masing dataset akan dibuah menjadi bentuk yang dapat dibaca oleh sistem dan mudah untuk ditulis oleh pengembang.
 
 3. Pembersihan Data dan Perubahan Tipe Data
   
-  Dataset yang menyimpan data yang tidak sesuai akan dilakukan pembersihan agar dan Kolom-kolom yang tipe datanya tidak sesuai dengan data yang disimpan akan dilakukan pembersihan untuk memudahkan proses eksplorasi selanjutnya.
+    Dataset yang menyimpan data yang tidak sesuai akan dilakukan pembersihan agar dan Kolom-kolom yang tipe datanya tidak sesuai dengan data yang disimpan akan dilakukan pembersihan untuk memudahkan proses eksplorasi selanjutnya.
 
 4. Distribusi Data
 
-  Dibuatkan sebuah visualisasi untuk menghitung jumlah banyak buku yang ada dari tahun ke tahun, jumlah buku yang diterbit dari masing-masing penerbit, jumlah buku yang dibuat oleh penulis.
+    Dibuatkan sebuah visualisasi untuk menghitung jumlah banyak buku yang ada dari tahun ke tahun, jumlah buku yang diterbit dari masing-masing penerbit, jumlah buku yang dibuat oleh penulis.
 
 5. Penanganan Nilai Kosong
 
-  Dataset diperiksa untuk mengetahui apakah terdapat nilai yang hilang atau tidak valid. Jika ditemukan, dilakukan penanganan seperti imputasi atau penghapusan baris.
+    Dataset diperiksa untuk mengetahui apakah terdapat nilai yang hilang atau tidak valid. Jika ditemukan, dilakukan penanganan seperti imputasi atau penghapusan baris.
 
 6. Penanganan Nilai Duplikat
 
-  Dataset diperiksa untuk mengetahui apakah terdapat nilai yang Duplikat. Jika ditemukan, dilakukan penanganan seperti penghapusan baris.
+    Dataset diperiksa untuk mengetahui apakah terdapat nilai yang Duplikat. Jika ditemukan, dilakukan penanganan seperti penghapusan baris.
 
 7. Transformasi Data
   
-  Setelah dataset telah bersih, selanjutnya mengtransformasi data menjadi bentuk dictionary agar bisa dipakai dalam pengembangan model sistem rekomendasi.
+    Setelah dataset telah bersih, selanjutnya mengtransformasi data menjadi bentuk dictionary agar bisa dipakai dalam pengembangan model sistem rekomendasi.
 
 # Model Development
 
