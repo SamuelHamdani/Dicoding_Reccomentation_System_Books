@@ -51,14 +51,14 @@ Dataset yang diambil berasal dari sumber open source yaitu Kaggle yang menyimpan
   
     Jumlah Kolom : Pada dataset terdapat jumlah kolom sebanyak 8 kolom yang menyimpan data buku seperti:
 
-  *   ISBN
-  *   Book-TItle
-  *   Book-Author
-  *   Year-Of-Publication
-  *   Publisher
-  *   Image-URL-S
-  *   Image-URL-M
-  *   Image-URL-L
+    *   ISBN
+    *   Book-TItle
+    *   Book-Author
+    *   Year-Of-Publication
+    *   Publisher
+    *   Image-URL-S
+    *   Image-URL-M
+    *   Image-URL-L
 
   Jumlah Baris : Sebanyak 271360 baris yang menyimpan data buku pada dataset ini.
 
@@ -66,9 +66,9 @@ Dataset yang diambil berasal dari sumber open source yaitu Kaggle yang menyimpan
   
     Jumlah Kolom : Pada dataset terdapat jumlah kolom sebanyak 3 kolom yang menyimpan data rating pengguna kepada buku yang pernah dibaca seperti:
 
-  *   User-ID
-  *   Location
-  *   Age
+    *   User-ID
+    *   Location
+    *   Age
 
   Jumlah Baris : Sebanyak 278858 baris yang menyimpan data buku pada dataset ini.
 
@@ -76,9 +76,9 @@ Dataset yang diambil berasal dari sumber open source yaitu Kaggle yang menyimpan
   
     Jumlah Kolom : Pada dataset terdapat jumlah kolom sebanyak 3 kolom yang menyimpan data pengguna seperti:
 
-  *   User-ID
-  *   ISBN
-  *   Book-Rating
+    *   User-ID
+    *   ISBN
+    *   Book-Rating
 
   Jumlah Baris : Sebanyak 1149780 baris yang menyimpan data buku pada dataset ini.
 
