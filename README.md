@@ -115,18 +115,19 @@ Berikut adalah penjelasan masing-masing fitur dalam masing-masing dataset:
 Pada bagian ini, dilakukan beberapa tahapan awal yang dilakukan sebelum pengembangan model, diantaranya:
 1. Load Dataset
 
-  Dataset diupload dari google drive yang dimana sudah didownload dari sumber (Kaggle) agar dapat digunakan untuk identifikasi macam-macam buku yang tersimpan beserta keterangannya, rating pengguna, dan jumlah pengguna.
+    Dataset diupload dari google drive yang dimana sudah didownload dari sumber (Kaggle) agar dapat digunakan untuk identifikasi macam-macam buku yang tersimpan beserta keterangannya, rating pengguna, dan jumlah pengguna.
 
 2. Perubahan Nama Kolom
-  Nama-nama kolom yang ada pada dataset diubah menjadi bentuk yang dapat dibaca oleh sistem agar membantu proses eksplorasi menjadi lebih mudah.
+
+   Nama-nama kolom yang ada pada dataset diubah menjadi bentuk yang dapat dibaca oleh sistem agar membantu proses eksplorasi menjadi lebih mudah.
 
 2. Pemeriksaan Nilai Kosong
 
-  Dataset diperiksa untuk mengetahui apakah terdapat nilai yang hilang atau tidak valid. Jika ditemukan, dilakukan penanganan seperti imputasi atau penghapusan baris.
+    Dataset diperiksa untuk mengetahui apakah terdapat nilai yang hilang atau tidak valid. Jika ditemukan, dilakukan penanganan seperti imputasi atau penghapusan baris.
 
 3. Pemeriksaan Nilai Duplikat
 
-  Dataset diperiksa untuk mengetahui apakah terdapat nilai yang Duplikat. Jika ditemukan, dilakukan penanganan seperti penghapusan baris.
+    Dataset diperiksa untuk mengetahui apakah terdapat nilai yang Duplikat. Jika ditemukan, dilakukan penanganan seperti penghapusan baris.
 
 # Data Preparation
 
@@ -139,26 +140,22 @@ Dikarenakan model yang dikembangkan menggunakan pendekatan Content-Based Filteri
 
 1. Pembersihan Data dan Perubahan Tipe Data
   
-  Dataset yang menyimpan data yang tidak sesuai akan dilakukan pembersihan agar dan Kolom-kolom yang tipe datanya tidak sesuai dengan data yang disimpan akan dilakukan pembersihan untuk memudahkan proses eksplorasi selanjutnya.
+    Dataset yang menyimpan data yang tidak sesuai akan dilakukan pembersihan agar dan Kolom-kolom yang tipe datanya tidak sesuai dengan data yang disimpan akan dilakukan pembersihan untuk memudahkan proses eksplorasi selanjutnya.
 
 2. Distribusi Data
 
-  Dibuatkan sebuah visualisasi untuk menghitung jumlah banyak buku yang ada dari tahun ke tahun, jumlah buku yang diterbit dari masing-masing penerbit, jumlah buku yang dibuat oleh penulis.
+    Dibuatkan sebuah visualisasi untuk menghitung jumlah banyak buku yang ada dari tahun ke tahun, jumlah buku yang diterbit dari masing-masing penerbit, jumlah buku yang dibuat oleh penulis.
 
 3. Penanganan Nilai Kosong (Missing Value)
 
-  Dataset diperiksa untuk mengetahui apakah terdapat nilai yang hilang atau tidak valid. Jika ditemukan, dilakukan penanganan seperti imputasi atau penghapusan baris.
+    Dataset diperiksa untuk mengetahui apakah terdapat nilai yang hilang atau tidak valid. Jika ditemukan, dilakukan penanganan seperti imputasi atau penghapusan baris.
 
 4. Pengurangan Data
-  Karena data yang tersimpan pada dataset berjumlah cukup banyak (+- 20000 data) sistem membutuhkan memori yang cukup banyak untuk memproses seluruh data tersebut. Oleh karena itu dilakukan pengurangan data agar sistem dapat menggunakan data buku untuk pembuatan sistem rekomendasi.
+    Karena data yang tersimpan pada dataset berjumlah cukup banyak (+- 20000 data) sistem membutuhkan memori yang cukup banyak untuk memproses seluruh data tersebut. Oleh karena itu dilakukan pengurangan data agar sistem dapat menggunakan data buku untuk pembuatan sistem rekomendasi.
 
 5. Transformasi Data
   
-  Setelah dataset telah bersih, selanjutnya mengtransformasi data menjadi bentuk dictionary agar bisa dipakai dalam pengembangan model sistem rekomendasi.
-
-# Model Development
-
----
+    Setelah dataset telah bersih, selanjutnya mengtransformasi data menjadi bentuk dictionary agar bisa dipakai dalam pengembangan model sistem rekomendasi.
 
 # Model Development
 
