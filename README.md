@@ -60,7 +60,7 @@ Dataset yang diambil berasal dari sumber open source yaitu Kaggle yang menyimpan
     *   Image-URL-M
     *   Image-URL-L
 
-  Jumlah Baris : Sebanyak 271360 baris yang menyimpan data buku pada dataset ini.
+    Jumlah Baris : Sebanyak 271360 baris yang menyimpan data buku pada dataset ini.
 
 2. Dataset Pengguna (users.csv)
   
@@ -70,7 +70,7 @@ Dataset yang diambil berasal dari sumber open source yaitu Kaggle yang menyimpan
     *   Location
     *   Age
 
-  Jumlah Baris : Sebanyak 278858 baris yang menyimpan data buku pada dataset ini.
+    Jumlah Baris : Sebanyak 278858 baris yang menyimpan data buku pada dataset ini.
 
 3. Dataset Rating (rating.csv)
   
@@ -80,7 +80,7 @@ Dataset yang diambil berasal dari sumber open source yaitu Kaggle yang menyimpan
     *   ISBN
     *   Book-Rating
 
-  Jumlah Baris : Sebanyak 1149780 baris yang menyimpan data buku pada dataset ini.
+    Jumlah Baris : Sebanyak 1149780 baris yang menyimpan data buku pada dataset ini.
 
 ## Kondisi Data:
 
