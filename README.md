@@ -34,11 +34,11 @@ Melalui latar belakang ini, pengembangan model machine learning untuk sistem rek
 
 3. Menerapkan teknik pemrosesan teks (seperti TF-IDF atau cosine similarity) untuk mengukur kemiripan antar buku berdasarkan kontennya.
 
-# Data Preparation
+# Data Understanding
 
 ---
 
-Pada tahap ini dilakukan eksplorasi awal dan pembersihan terhadap data yang digunakan untuk membangun sistem rekomendasi buku. Dataset yang digunakan berisi beberapa fitur penting yang memengaruhi pengembangan sistem rekomendasi buku.
+Pada tahap ini dilakukan eksplorasi awal isi dataset untuk mengenalu beberapa fitur penting yang memengaruhi pengembangan sistem rekomendasi buku.
 
 ## Sumber Data
 Sumber Dataset : https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset?select=Ratings.csv
@@ -111,42 +111,60 @@ Berikut adalah penjelasan masing-masing fitur dalam masing-masing dataset:
     *   ISBN : Kode unik identifikasi untuk setiap buku (International Standard Book Number). Digunakan untuk menghubungkan data buku dengan data rating.
     *   Book-Rating : Nilai rating yang diberikan pengguna terhadap buku yang pernah dibaca, dinilai dalam skala 0–10.
 
+## Proses Eksplorasi Awal
+Pada bagian ini, dilakukan beberapa tahapan awal yang dilakukan sebelum pengembangan model, diantaranya:
+1. Load Dataset
+
+  Dataset diupload dari google drive yang dimana sudah didownload dari sumber (Kaggle) agar dapat digunakan untuk identifikasi macam-macam buku yang tersimpan beserta keterangannya, rating pengguna, dan jumlah pengguna.
+
+2. Perubahan Nama Kolom
+  Nama-nama kolom yang ada pada dataset diubah menjadi bentuk yang dapat dibaca oleh sistem agar membantu proses eksplorasi menjadi lebih mudah.
+
+2. Pemeriksaan Nilai Kosong
+
+  Dataset diperiksa untuk mengetahui apakah terdapat nilai yang hilang atau tidak valid. Jika ditemukan, dilakukan penanganan seperti imputasi atau penghapusan baris.
+
+3. Pemeriksaan Nilai Duplikat
+
+  Dataset diperiksa untuk mengetahui apakah terdapat nilai yang Duplikat. Jika ditemukan, dilakukan penanganan seperti penghapusan baris.
+
+# Data Preparation
+
+---
+
+Pada tahap ini dilakukan proses persiapan data sebelum data digunakan untuk pengembangan model sistem rekomendasi dengan melakukan pembersihan dan transformasi. 
+
 ## Proses Persiapan Data
 Dikarenakan model yang dikembangkan menggunakan pendekatan Content-Based Filtering, model akan dipakai untuk memberikan rekomendasi buku berdasarkan buku yang telah dibaca oleh pengguna berdasarkan penulis yang sama. Oleh karena itu, dilakukan proses persiapan data hanya pada dataset 'books.csv' karena menyimpan data buku dan penulis. Tahapan yang dilakukan dalam persiapan data diantaranya:
 
-1. Load Dataset
-
-   Dataset diupload dari google drive yang dimana sudah didownload dari sumber (Kaggle) agar dapat digunakan untuk perkembangan sistem rekomendasi.
-
-2. Perubahan Nama Kolom
-
-   Kolom-kolom pada masing-masing dataset akan dibuah menjadi bentuk yang dapat dibaca oleh sistem dan mudah untuk ditulis oleh pengembang.
-
-3. Pembersihan Data dan Perubahan Tipe Data
+1. Pembersihan Data dan Perubahan Tipe Data
   
-    Dataset yang menyimpan data yang tidak sesuai akan dilakukan pembersihan agar dan Kolom-kolom yang tipe datanya tidak sesuai dengan data yang disimpan akan dilakukan pembersihan untuk memudahkan proses eksplorasi selanjutnya.
+  Dataset yang menyimpan data yang tidak sesuai akan dilakukan pembersihan agar dan Kolom-kolom yang tipe datanya tidak sesuai dengan data yang disimpan akan dilakukan pembersihan untuk memudahkan proses eksplorasi selanjutnya.
 
-4. Distribusi Data
+2. Distribusi Data
 
-    Dibuatkan sebuah visualisasi untuk menghitung jumlah banyak buku yang ada dari tahun ke tahun, jumlah buku yang diterbit dari masing-masing penerbit, jumlah buku yang dibuat oleh penulis.
+  Dibuatkan sebuah visualisasi untuk menghitung jumlah banyak buku yang ada dari tahun ke tahun, jumlah buku yang diterbit dari masing-masing penerbit, jumlah buku yang dibuat oleh penulis.
 
-5. Penanganan Nilai Kosong
+3. Penanganan Nilai Kosong (Missing Value)
 
-    Dataset diperiksa untuk mengetahui apakah terdapat nilai yang hilang atau tidak valid. Jika ditemukan, dilakukan penanganan seperti imputasi atau penghapusan baris.
+  Dataset diperiksa untuk mengetahui apakah terdapat nilai yang hilang atau tidak valid. Jika ditemukan, dilakukan penanganan seperti imputasi atau penghapusan baris.
 
-6. Penanganan Nilai Duplikat
+4. Pengurangan Data
+  Karena data yang tersimpan pada dataset berjumlah cukup banyak (+- 20000 data) sistem membutuhkan memori yang cukup banyak untuk memproses seluruh data tersebut. Oleh karena itu dilakukan pengurangan data agar sistem dapat menggunakan data buku untuk pembuatan sistem rekomendasi.
 
-    Dataset diperiksa untuk mengetahui apakah terdapat nilai yang Duplikat. Jika ditemukan, dilakukan penanganan seperti penghapusan baris.
-
-7. Transformasi Data
+5. Transformasi Data
   
-    Setelah dataset telah bersih, selanjutnya mengtransformasi data menjadi bentuk dictionary agar bisa dipakai dalam pengembangan model sistem rekomendasi.
+  Setelah dataset telah bersih, selanjutnya mengtransformasi data menjadi bentuk dictionary agar bisa dipakai dalam pengembangan model sistem rekomendasi.
 
 # Model Development
 
 ---
 
-Setelah data yang digunakan telah selesai untuk dibersihkan dan bisa dipakai, selanjutnya adalah pengembangan model machine learning dengan pendekatan Content-Based Filtering untuk membuat sistem rekomendasi buku berdasarkan buku dengan penulis (author) yang sama menggunakan library TfIdVectorizer dan Cosine Similarity.
+# Model Development
+
+---
+
+Setelah data yang digunakan telah selesai untuk dibersihkan dan bisa dipakai, selanjutnya adalah pengembangan model machine learning dengan pendekatan Content-Based Filtering untuk membuat sistem rekomendasi buku berdasarkan buku dengan penulis (author) yang sama menggunakan kelas TfIdVectorizer dan Cosine Similarity.
 
 Penjelasan pendekatan Content-Based Filtering:
 
@@ -161,6 +179,7 @@ Penjelasan pendekatan Content-Based Filtering:
 4. Rekomendasi: Sistem merekomendasikan item lain yang paling mirip dengan item yang pernah disukai oleh pengguna.
 
 **Kelebihan :**
+
 1. Tidak tergantung data pengguna lain: Sistem dapat bekerja dengan baik meskipun hanya ada sedikit pengguna (cocok untuk cold-start user).
 
 2. Personalized: Rekomendasi sangat sesuai dengan preferensi individu karena berdasarkan riwayat pengguna itu sendiri.
@@ -168,17 +187,57 @@ Penjelasan pendekatan Content-Based Filtering:
 3. Transparansi: Lebih mudah menjelaskan alasan rekomendasi ("buku ini direkomendasikan karena mirip dengan buku X yang Anda sukai").
 
 **Kekurangan:**
+
 1. Kurang mampu memberikan keberagaman: Sistem cenderung merekomendasikan item yang sangat mirip, sehingga bisa membatasi eksplorasi.
 
 2. Terbatas pada fitur item: Jika fitur kurang informatif atau tidak lengkap, kualitas rekomendasi akan menurun.
 
 3. Cold-start item: Tidak dapat merekomendasikan item baru jika belum memiliki informasi kontennya.
 
-# Validation
+**Hasil Output**
+
+Berikut adalah contoh hasil rekomendasi buku dengan pendekatan Content-Based Filtering berdasarkan kemiripan penulis. Sistem memberikan rekomendasi buku yang memiliki kesamaan penulis dengan buku input.
+
+Sebagai contoh, jika pengguna menyukai buku "Book X", maka sistem merekomendasikan:
+
+| Book\_Recommendation | Similarity | Author   |
+| -------------------- | ---------- | -------- |
+| Book Y               | 1.0   | Author X |
+| Book Z               | 1.0   | Author X |
+| Book A               | 1.0   | Author X |
+| Book B               | 1.0   | Author X |
+
+# Evaluation
 
 ---
 
-Dari hasil percobaan menggunakan model sistem rekomendasi didapati hasil bahwa model memberikan referensi kelima buku lain dari penulis dengan nama yang sama yaitu Nicholas Evans. Oleh karena itu, dapat disimpulkan bahwa model yang dibangun sudah bisa dipakai untuk memberikan rekomendasi buku berdasarkan penulis yang sama.
+Setelah model telah selesai dikembangkan, selanjutnya melakukan tes validasi guna mencari tahu apakah model yang dikembangkan untuk memberikan rekomendasi 5 buku berdasarkan penulis yang sama dengan metrik evaluasi pendekatan analisis kualitatif
+
+**Pendekatan Analisis Kualitatif**
+
+Menjelaskan apakah rekomendasi yang dihasilkan sistem benar-benar relevan berdasarkan konten (penulis buku), seperti yang diharapkan dari pendekatan Content-Based Filtering.
+
+**Metodologi**
+1. Pilih beberapa contoh buku sebagai input.
+
+2. Tampilkan hasil rekomendasi yang diberikan sistem.
+
+3. Bandingkan konten rekomendasi dengan input, misalnya dari sisi:
+
+    *   Penulis (Author) → Apakah sama?
+    *   Popularitas atau seri → Apakah masuk dalam seri buku yang sama?
+  
+**Hasil Analisa Kualitatif**
+
+| Input_Buku | Rekomendasi Buku | Penulis Sama? | Relevan? |
+| -------------------- | ---------- | -------- | -------- |
+| El Hombre Que Susurraba Al Oido De Los Caballos               | The Loop: A Novel   | Ya | Ya |
+| El Hombre Que Susurraba Al Oido De Los Caballos               | Der PferdeflÃ?Â¼sterer.	   | Ya | Ya |
+| El Hombre Que Susurraba Al Oido De Los Caballos               | The Horse Whisperer   | Ya | Ya |
+| El Hombre Que Susurraba Al Oido De Los Caballos               | The Horse Whisperer   | Ya | Ya |
+| El Hombre Que Susurraba Al Oido De Los Caballos               | Le cercle des loups	   | Ya | Ya |
+
+Dari hasil analisa kualitatif yang dilakukan untuk menentukan hasil output rekomendasi buku, dapat disimpulkan bahwa model yang dibangun sudah bisa dipakai untuk memberikan rekomendasi buku berdasarkan penulis yang sama.
 
 ## Hubungan Business Understanding
 | **Aspek**                                                                                                       | **Evaluasi**                                                                                                                                                                                                |
