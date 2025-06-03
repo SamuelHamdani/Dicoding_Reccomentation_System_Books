@@ -226,6 +226,10 @@ Menjelaskan apakah rekomendasi yang dihasilkan sistem benar-benar relevan berdas
   
 **Hasil Analisa Kualitatif**
 
+Input Buku : **El Hombre Que Susurraba Al Oido De Los Caballos**
+
+Hasil:
+
 | Input_Buku | Rekomendasi Buku | Penulis Sama? | Relevan? |
 | -------------------- | ---------- | -------- | -------- |
 | El Hombre Que Susurraba Al Oido De Los Caballos               | The Loop: A Novel   | Ya | Ya |
