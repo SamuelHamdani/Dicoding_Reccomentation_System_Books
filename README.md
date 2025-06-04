@@ -224,18 +224,22 @@ Mengukur kualitas peringkat dari rekomendasi, dengan memberi bobot lebih tinggi 
 
 Rumus:
 
-\[
-\text{DCG@k} = \sum_{i=1}^{k} \frac{rel_i}{\log_2(i + 1)}
-\]
+**DCG@k**
 
-Di mana:
-- \( rel_i \) = skor relevansi item pada posisi ke-i (biasanya 1 untuk relevan, 0 untuk tidak relevan)
+DCG@k = rel₁ + (rel₂ / log₂(3)) + (rel₃ / log₂(4)) + ... + (rel_k / log₂(k + 1))
 
-\[
-\text{NDCG@k} = \frac{\text{DCG@k}}{\text{IDCG@k}}
-\]
+Keterangan:
+- relᵢ adalah skor relevansi item pada posisi ke-i (biasanya 1 untuk relevan, 0 untuk tidak relevan)
+- log₂ adalah logaritma basis 2
+- Posisi dihitung mulai dari 1, sehingga rumus menggunakan log₂(i + 1)
 
-Nilai NDCG berada antara 0 hingga 1. Semakin mendekati 1, semakin baik kualitas urutan rekomendasi.
+**NDCG@k**
+
+NDCG@k = DCG@k / IDCG@k
+
+Keterangan:
+- IDCG@k adalah nilai DCG ideal, yaitu ketika semua item relevan berada di urutan teratas
+- Nilai NDCG berada antara 0 (sangat buruk) hingga 1 (sangat baik)
 
 ---
 
