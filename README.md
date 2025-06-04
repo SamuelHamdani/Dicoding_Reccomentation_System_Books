@@ -244,7 +244,7 @@ Keterangan:
 | Metrik Evaluasi | Skor | Persentase |
 | -------------------- | ---------- | ----|
 | Precision@k               | 0.80   | 80% |
-| Recall@k               | 1.00   | 100% |
+| NDCG@k               | 1.00   | 100% |
 
 Hasil evaluasi menunjukkan bahwa sistem mampu merekomendasikan buku dengan Precision@5 sebesar 0.80 atau 80% dan NDCG@5 sebesar 1.00 100% , yang berarti 4 dari 5 rekomendasi benar-benar relevan dan semuanya berada dalam urutan peringkat yang ideal—menandakan bahwa sistem rekomendasi bekerja sangat baik dalam konteks buku ini.
 
