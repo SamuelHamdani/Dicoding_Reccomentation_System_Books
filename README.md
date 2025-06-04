@@ -224,16 +224,12 @@ Mengukur kualitas peringkat dari rekomendasi, dengan memberi bobot lebih tinggi 
 
 Rumus:
 
-**DCG@k**
-
 DCG@k = rel₁ + (rel₂ / log₂(3)) + (rel₃ / log₂(4)) + ... + (rel_k / log₂(k + 1))
 
 Keterangan:
 - relᵢ adalah skor relevansi item pada posisi ke-i (biasanya 1 untuk relevan, 0 untuk tidak relevan)
 - log₂ adalah logaritma basis 2
 - Posisi dihitung mulai dari 1, sehingga rumus menggunakan log₂(i + 1)
-
-**NDCG@k**
 
 NDCG@k = DCG@k / IDCG@k
 
