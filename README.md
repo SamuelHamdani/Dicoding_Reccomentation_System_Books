@@ -1,6 +1,6 @@
 # Laporan Proyek Machine Learning - Samuel Christian Hamdani
 
-## Domain Proyek
+## Project Overview
 
 
 ---
@@ -170,7 +170,7 @@ Dikarenakan model yang dikembangkan menggunakan pendekatan Content-Based Filteri
 
   Dilakukan proses vektorisasi data menggunakan library TfIdVectorizer untuk menyaring dan mengubah teks menjadi representasi angka yang mencerminkan pentingnya setiap kata, agar bisa diproses oleh model machine learning dengan lebih efektif.
 
-## Model Development
+## Modeling
 
 ---
 
