@@ -204,6 +204,22 @@ Penjelasan pendekatan Content-Based Filtering:
 
 3. Cold-start item: Tidak dapat merekomendasikan item baru jika belum memiliki informasi kontennya.
 
+### Hasil Ujicoba SIstem
+Setelah model dirancang, selanjutnya model dolakukan ujicoba untuk melihat apakah hasil output rekomendasi yang diberikan sesuai dengan penulis yang sama. Disini dimasukkan nama buku yang tersimpan pada dataset, lalu sistem akan memeriksa dataset untuk mencari buku-buku lain dengan nama penulis yang sama.
+Input Buku: El Hombre Que Susurraba Al Oido De Los Caballos
+
+Hasil Output:
+
+| Book_Reccomendation | Similarity | Author |
+| -------------------- | ---------- | ----|
+| The Loop: A Novel	| 1.00   | Nicholas Evans |
+| Der PferdeflÃ?Â¼sterer.	| 1.00   | Nicholas Evans |
+| The Horse Whisperer	| 1.00   | Nicholas Evans |
+| The Horse Whisperer	| 1.00   | Nicholas Evans |
+| Le cercle des loups | 1.00   | Nicholas Evans |
+
+Dari hasil output diatas, didapati hasil bahwa model memberikan referensi kelima buku lain dari penulis dengan nama yang sama yaitu Nicholas Evans.
+
 ## Evaluation
 
 ---
